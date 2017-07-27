@@ -1,0 +1,102 @@
+
+.login-header {
+  color:#A9A9A9;
+  background-color:#f5f5f0;
+  max-width:650px;
+  padding:10px;
+  font-size: 1.5em;
+  font-weight: 70px;
+  text-align:left;
+  border:1px solid #ccc;
+  border-radius: 5px;
+
+  }
+
+.register-header {
+  color:#A9A9A9;
+  background-color:#f5f5f0;
+  max-width:650px;
+  padding:10px;
+  font-size: 1.5em;
+  font-weight: 70px;
+  text-align:left;
+  border:1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.login-form{
+   margin-top:190px;
+   border:1px solid #ccc;
+   border-top: none;
+   margin-bottom: 20px;
+   border-radius: 5px;
+ }
+
+.register-form {
+    margin-top: 190px;
+    border:1px solid #ccc;
+    border-top: none;
+    border-radius: 5px;
+
+}
+
+.chirp {
+    .margin: 10px 0;
+}
+
+.username {
+    font-size: 16px;
+
+}
+
+/*.container[role=main] {
+   margin-top: 200px;
+}*/
+
+.error-field {
+    border-color: red;
+}
+
+label{
+    float:left;
+    clear:left;
+    width:200px;
+    text-align:right;
+ }
+
+/*button {
+    margin-bottom:30px;
+    margin-left: 250px;
+    margin-top: 1px;
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+    font-size:16px;
+    font-weight:700px;
+
+}*/
+
+button:hover {
+    opacity: 0.8;
+}
+
+.center{
+    margin-left: 280px;
+    width: 50%;
+}
+
+.profile-icon {
+    padding: 20px;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.follow {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+

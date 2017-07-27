@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="center">
+<form style="background-color:HoneyDew" method="post" class="register-form">
+
+
+    <h2 class="register-header"> Register </h2>
+    {% csrf_token %}
+    <p>
+         <label for="id_first_name">Full name:</label>
+        <input style="border-radius:3px; margin-left:51px; margin-bottom:10px" type="text" name="first_name" placeholder="First Name" maxlength="30" id="id_first_name" class="{% if form.first_name.errors %} error-field {% endif %}" />
+        {{ form.first_name.errors }}
+
+        <input style="border-radius:3px; margin-left:250px" type="text" name="last_name" placeholder="Last Name" maxlength="30" id="id_last_name" class="{% if form.last_name.errors %} error-field {% endif %}"/>
+        {{ form.last_name.errors }}
+    </p>
+
+    <p>
+        <label for="id_username">Username:</label>
+        <input style="border-radius:3px; margin-left:51px"type="text" name="username"  placeholder="Username" maxlength="150" required id="id_username"
+        class="{% if form.username.errors %} error-field {% endif %}"/>
+        {{ form.username.errors }}
+    </p>
+    <p>
+        <label for="id_email">Email address:</label>
+        <input style="border-radius:3px; margin-left:51px" type="email" name="email" placeholder="Email" maxlength="254" id="id_email" class="{% if form.email.errors %} error-field {% endif %}"/>
+        {{ form.email.errors }}
+    </p>
+    <p>
+        <label for="id_password">Password:</label>
+        <input style="border-radius:3px; margin-left:51px" type="password" name="password" placeholder="Password" class="password-field" maxlength="128" required id="id_password" class="{% if form.password.errors %} error-field {% endif %}"/>
+        {{ form.password.errors }}
+    </p>
+    <p>
+        <label for="id_retype_password">Retype password:</label>
+        <input style="border-radius:3px; margin-left:51px" type="password" name="retype_password" placeholder="Retype password" required id="id_retype_password" class="{% if form.retype_password.errors %} error-field {% endif %}"/>
+        {{ form.retype_password.errors }}
+    </p>
+
+    <button type="submit" style="margin-bottom:10px; margin-left: 346px"class="btn btn-primary">Register</button>
+
+</form>
+</div>
+
+{% endblock %}
