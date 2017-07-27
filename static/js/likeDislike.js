@@ -14,9 +14,11 @@
 
             request.done(function () {
                 alert("SUCCES!")
+                location.reload();
         });
             request.fail(function () {
                 alert("FAILLL!")
+                location.reload();
             });
         });
 
@@ -33,9 +35,11 @@
 
             request.done(function () {
                 alert("SUCCES!")
+                location.reload();
         });
             request.fail(function () {
                 alert("FAILLL!")
+                location.reload();
             });
         });
     });
