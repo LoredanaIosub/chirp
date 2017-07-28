@@ -39,7 +39,7 @@ class ProfileBaseView(DetailView):
         following = Follow.objects.filter(following_user=self.request.user)
         context["following"] = [f.followed_user for f in following]
         followers = Follow.objects.filter(followed_user=self.request.user)
-        context["followers"] = [f.following_user for f in following]
+        context["followers"] = [f.following_user for f in followers]
         return context
 
 
@@ -87,17 +87,18 @@ def like_message(request):
     if request.method == "POST":
         message_id = request.POST.get('id')
         print(message_id)
-        like_value = bool(int(request.POST.get('like')))
+        like_value=bool(int(request.POST.get('like')))
         print(like_value)
-        message = get_object_or_404(Message, id=message_id)
+        message=get_object_or_404(Message, id=message_id)
         try:
-            like = Like.objects.get(user=request.user, message=message)
+            like = Like.objects.get(user=request.user,message=message)
             if like.like == like_value:
                 like.delete()
             else:
-                like.like == like_value
+                like.like = like_value
                 like.save()
         except Like.DoesNotExist:
-            like = Like(user=request.user, message=message, like = like_value)
+            like = Like(user = request.user,message=message,like=like_value)
             like.save()
-    return JsonResponse({'succes': 'true'})
+
+    return JsonResponse({'success': 'true'})

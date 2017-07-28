@@ -18,5 +18,5 @@ urlpatterns = [
     url(r'^follow/(?P<username>[-\w]+)/$', login_required(follow_user), name='follow_user'),
     url(r'^unfollow/(?P<username>[-\w]+)/$', login_required(unfollow_user), name='unfollow_user'),
     url(r'^chirp/', login_required(new_chirp), name='chirp'),
-    url(r'^like/$', login_required(like_message), name='like'),
+    url(r'^like/$', login_required(like_message), name='like')
 ]

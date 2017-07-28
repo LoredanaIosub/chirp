@@ -1,46 +1,42 @@
 (function () {
     'use strict';
-    $(document).ready(function () {
-        $('.like-message').click(function () {
-            alert("Pressed a like button!");
+    $(document).ready(function(){
+        $('.like-message').click(function(){
+            alert("Pressed a like button");
             var request = $.ajax({
                 url: "http://127.0.0.1:8000/like/",
                 method: "POST",
                 data: {id : $(this).attr("data-messageid"),
-                    like: 1
+                like: 1
                 }
-
             });
-
-            request.done(function () {
-                alert("SUCCES!")
+            request.done(function(){
+                alert("SUCCESS");
                 location.reload();
-        });
-            request.fail(function () {
-                alert("FAILLL!")
+            });
+            request.fail(function(){
+                alert("FAILLLL");
                 location.reload();
             });
         });
-
-        $('.dislike-message').click(function () {
-            alert("Pressed a dislike button!");
-            var request = $.ajax({
+         $('.dislike-message').click(function(){
+            alert("Pressed a dislike button");
+              var request = $.ajax({
                 url: "http://127.0.0.1:8000/like/",
                 method: "POST",
                 data: {id : $(this).attr("data-messageid"),
-                    like: 0
+                like: 0
                 }
-
             });
-
-            request.done(function () {
-                alert("SUCCES!")
+            request.done(function(){
+                alert("SUCCESS");
                 location.reload();
-        });
-            request.fail(function () {
-                alert("FAILLL!")
+            });
+            request.fail(function(){
+                alert("FAILLLL");
                 location.reload();
             });
         });
     });
+
 })();

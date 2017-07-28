@@ -26,7 +26,7 @@ class Message(TimestampModel):
 
 class Like(TimestampModel):
     user = models.ForeignKey(User)
-    message =models.ForeignKey(Message)
+    message = models.ForeignKey(Message)
     like = models.BooleanField()
 
 

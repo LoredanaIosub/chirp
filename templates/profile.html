@@ -10,12 +10,12 @@
             {% if object in following %}
                 <form method="post" action="{% url 'unfollow_user' object.username %}">
                     {% csrf_token %}
-                    <button style="margin-left:1px;width=90px" type="submit" class="btn btn-primary unfollow">Unfollow</button>
+                    <button style="margin-left:1px;width=90px; margin-top:10px" type="submit" class="btn btn-primary unfollow">Unfollow</button>
                 </form>
             {% else %}
                 <form method="post" action="{% url 'follow_user' object.username %}">
                     {% csrf_token %}
-                    <button style="margin-left:1px;width:90px" type="submit" class="btn btn-primary follow">Follow</button>
+                    <button style="margin-left:1px;width:90px; margin-top:10px" type="submit" class="btn btn-primary follow">Follow</button>
                 </form>
             {% endif %}
         {% endif %}
@@ -46,14 +46,33 @@
         </div>
 
         {% endfor %}
-            </div>
-
-            <div class="tab-pane" id="following-tab">
-            </div>
-
         </div>
+            <div class="tab-pane" id="following-tab">
 
+                {% for user in following %}
+                <div class="row chirp">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> You are following  <a href="{% url 'profile' user.username %}">{{ user }}</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="tab-pane" id="followers-tab">
+
+                 {% for user in followers %}
+                 <div class="row chirp">
+                     <div class="panel panel-default">
+                         <div class="panel-body"><p> You are followed by <a href="{% url 'profile' user.username %}">{{ user }}</a>.</p>
+                         </div>
+                     </div>
+                 </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 
 </div>
+
 {% endblock %}
